@@ -13,6 +13,15 @@ public class Solver {
 
     public static String solve(String strToSolve) {
         String ret;
+        Matcher matchA = patternArab.matcher(strToSolve);
+        if (matchA.matches()) {
+            int r1 = Integer.parseInt(matchA.group(1));
+            int r2 = Integer.parseInt(matchA.group(3));
+            if(r1>10||r2>10) wrongArgument();
+            ret = Solver.solve(r1, matchA.group(2), r2)+"";
+            //System.out.println(r1 + matchA.group(2) + r2 + "=" + ret);
+            return ret;
+        }
         Matcher matchR = patternRoman.matcher(strToSolve);
         if (matchR.matches()) {
             int r1 = new Roman(matchR.group(1)).getIntValue();
@@ -24,15 +33,6 @@ public class Solver {
             return ret;
         }
 
-        Matcher matchA = patternArab.matcher(strToSolve);
-        if (matchA.matches()) {
-            int r1 = Integer.parseInt(matchA.group(1));
-            int r2 = Integer.parseInt(matchA.group(3));
-                if(r1>10||r2>10) wrongArgument();
-            ret = Solver.solve(r1, matchA.group(2), r2)+"";
-            //System.out.println(r1 + matchA.group(2) + r2 + "=" + r3);
-            return ret;
-        }
             throw new IllegalArgumentException("Ошибка во введенном выражении");
     }
 
