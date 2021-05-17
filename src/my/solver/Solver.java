@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Solver {
+
     final private static String strPattRom="([M{0,3}(CM|CD|D?C{0,3})?(XC|XL|L?X{0,3})?(IX|IV|V?I{0,3})?]+)";
     final private static String strPattArab="([0-9]+)";
     final private static String strOper="([\\*\\/\\+\\-]{1})";

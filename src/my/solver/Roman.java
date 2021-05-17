@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Roman {
+
     public final static String strPattern="^M{0,3}(CM|CD|D?C{0,3})?(XC|XL|L?X{0,3})?(IX|IV|V?I{0,3})?$";
     private final static Pattern pattern=Pattern.compile(strPattern);
     private static Map<String, Integer> map = new HashMap<>();

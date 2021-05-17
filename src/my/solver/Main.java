@@ -12,6 +12,7 @@ public class Main {
             str = new Scanner(System.in).next();
             if(str.equals("exit")) break;
             System.out.println(solve(str));
+
         }
     }
 }
