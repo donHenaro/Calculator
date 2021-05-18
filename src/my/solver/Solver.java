@@ -17,7 +17,7 @@ public class Solver {
         if (matchA.matches()) {
             int r1 = Integer.parseInt(matchA.group(1));
             int r2 = Integer.parseInt(matchA.group(3));
-            if(r1>10||r2>10) wrongArgument();
+                if(r1>10||r2>10) wrongArgument();
             ret = Solver.solve(r1, matchA.group(2), r2)+"";
             //System.out.println(r1 + matchA.group(2) + r2 + "=" + ret);
             return ret;
@@ -26,7 +26,7 @@ public class Solver {
         if (matchR.matches()) {
             int r1 = new Roman(matchR.group(1)).getIntValue();
             int r2 = new Roman(matchR.group(3)).getIntValue();
-               if(r1>10||r2>10) wrongArgument();
+                if(r1>10||r2>10) wrongArgument();
             int r3 = Solver.solve(r1, matchR.group(2), r2);
             ret = new Roman(r3).toString();
             //System.out.println(r1 + matchR.group(2) + r2 + "=" + r3);

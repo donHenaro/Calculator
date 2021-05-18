@@ -9,10 +9,10 @@ public class Main {
         String str;
         while(true){
             System.out.print("Ведите выражение: ");
-            str = new Scanner(System.in).next();
+            str = new Scanner(System.in).nextLine();
             if(str.equals("exit")) break;
+            str=str.replaceAll("\\s+","");
             System.out.println(solve(str));
-
         }
     }
 }
